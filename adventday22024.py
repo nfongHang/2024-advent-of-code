@@ -45,28 +45,18 @@ def test(line):
         return True
     
 
+# Part 2
 for line in data:
     set=[]
     for i in range(len(line)):
          a=line.copy()
-
          a.pop(i)
          set.append(a)
-    print(set)
+        
     ok=False
+    
     for thing in set:
         result=test(thing)
-#        if result==None:
-#            count+=1
-#            notfound=True
-#            for line in wrong:
-#                temp=''
- #               for x in thing:
-#                    temp+=str(x)+' '
-#                if line.strip()==temp:
-#                    notfound=False
-#            if notfound:
-#                print(thing)
         if result==True:
              print(thing)
              safe+=1
