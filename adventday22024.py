@@ -1,11 +1,5 @@
-import searching_and_sorting 
-
-
-#Part 1
-
 f=open("input2024day2advent.txt","r")
 data=[]
-wrong=open("demofile.txt","r")
 for line in f:
     line=line.strip("\n")
     line=line.split(" ")
@@ -17,6 +11,8 @@ for line in f:
 
 safe=0
 count=0
+
+#function to test whether if the line is valid
 def test(line):
     increasing=-1
     ok=True
@@ -44,6 +40,12 @@ def test(line):
     if ok==True:
         return True
     
+# Part 1
+for line in data:
+    if test(line):
+        safe+=1
+print("Part 1:", safe)
+safe=0
 
 # Part 2
 for line in data:
@@ -52,21 +54,13 @@ for line in data:
          a=line.copy()
          a.pop(i)
          set.append(a)
-        
     ok=False
-    
     for thing in set:
         result=test(thing)
         if result==True:
-             print(thing)
              safe+=1
              break
 
-
-
-        
-            
-print(count)
-print(safe)
+print("Part 2:", safe)
                 
 f.close()
