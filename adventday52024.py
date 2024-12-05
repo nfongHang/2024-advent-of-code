@@ -74,3 +74,5 @@ total=0
 for line in h:
     total+=int(line[len(line)//2])
 print("Part 2:",total)
+
+f.close()
